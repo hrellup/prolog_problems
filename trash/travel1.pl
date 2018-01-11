@@ -19,4 +19,4 @@ travel(X,Y) :- byCar(X,Y); byTrain(X,Y); byPlane(X,Y).
 
 travel(X,Y) :- byCar(X,Z), travel(Z,Y); byTrain(X,Z), travel(Z,Y); byPlane(X,Z), travel(Z,Y).
 
-go(X,Y,Z)
+go(X,Y,Z) :-
