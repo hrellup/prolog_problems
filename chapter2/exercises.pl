@@ -1,3 +1,5 @@
+% six Italian words
+
 word(astante, a,s,t,a,n,t,e).
 word(astoria, a,s,t,o,r,i,a).
 word(baratto, b,a,r,a,t,t,o).
