@@ -44,3 +44,5 @@ listtran([AH|AT],[BH|BT]) :- tran(AH,BH), listtran(AT,BT).
 
 twice([],[]).
 twice([AH|AT],[AH,AH|BT]) :-  twice(AT,BT).
+
+peter(dam).
