@@ -48,5 +48,9 @@ travel(X,Y) :- byCar(X,Z), travel(Z,Y); byTrain(X,Z), travel(Z,Y); byPlane(X,Z),
 
 % route
 
-go(X,Y,Z)
+travel(X,Y,go(X,Y)) :- byCar(X,Y); byTrain(X,Y); byPlane(X,Y).
+
+travel(X,Y, go(X,Z,G)) :- byCar(X,Z), travel(Z,Y,G);
+                          byTrain(X,Z), travel(Z,Y,G);
+                          byPlane(X,Z), travel(Z,Y,G).
 
