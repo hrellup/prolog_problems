@@ -80,9 +80,15 @@ accdot([],[],A,A).
 accdot([H1|T1],[H2|T2],A,L) :- Anew is A + H1 * H2, accdot(T1,T2,Anew,L).
 
 
+:- begin_tests(lists).
+:- use_module(library(lists)).
 
+test(max) :- max([1,2,3,4,5,6,7,8,9],9),!.
+test(accMin) :- accMin([1,2,3,4,5,6,7,8,9],1).
+test(scalarMult) :- scalarMult(3,[2,7,4],[6,21,12]),!.
+test(dot) :- dot([2,5,6],[3,4,1],32).
 
-
+:- end_tests(lists).
 
 
 

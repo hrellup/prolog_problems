@@ -11,7 +11,9 @@ increment(Y,X) :- Y1 is Y + 1, X =:= Y1.
 %
 
 sum(X,Y,Z) :- Z is Y + X.
-
+a.
+a.
+a.
 % Write a predicate addone/2 whose first argument is a list of integers,
 % and whose second argument is the list of integers obtained by adding 1
 % to each integer in the first list. For example, the query
@@ -21,3 +23,33 @@ sum(X,Y,Z) :- Z is Y + X.
 
 addone([],[]).
 addone([H|T], [H1|X]) :- H1 is H+1, addone(T,X).
+
+
+:- begin_tests(lists).
+:- use_module(library(lists)).
+
+test(increment) :- increment(4,5).
+test(increment, fail) :- increment(4,6).
+
+test(sum) :- sum(4,5,9).
+test(sum, fail) :- sum(4,6,12).
+
+test(addone) :- addone([1,2,7,2],[2,3,8,3]).
+
+:- end_tests(lists).
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
