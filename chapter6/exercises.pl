@@ -1,27 +1,28 @@
 
 
-append2([],L,L).
-append2([H|T],L2,[H|L3]) :- append2(T,L2,L3).
+% append([],L,L).
+% append([H|T],L2,[H|L3]) :- append2(T,L2,L3).
 
-prefix2(P,L):- append2(P,_,L).
+% prefix(P,L):- append2(P,_,L).
+% suffix(S,L):- append2(_,S,L).
 
-suffix2(S,L):- append2(_,S,L).
+% sublist(SubL,L):- suffix2(S,L), prefix2(SubL,S).
 
-sublist(SubL,L):- suffix2(S,L), prefix2(SubL,S).
-
-
+%
+% 6.1
+%
 
 double(List) :- append(X,X,List).
 
 
 %
-% palindrom
+% 6.2
 %
 
 palindrom(L) :- reverse(L,L).
 
 %
-% toptail
+% 6.3 toptail
 %
 
 
@@ -32,8 +33,15 @@ palindrom(L) :- reverse(L,L).
 :- begin_tests(lists).
 :- use_module(library(lists)).
 
+test(double) :-
+        double([a,b,c,a,b,c]).
+        
+test(double, fail) :-
+        double([foo,gubble,foo]).
 
-
+test(palindrom) :-
+        palindrom([a,b,c,d,c,b,a]).
+        
 test(palindrom) :-
         palindrom([a,b,c,d,c,b,a]).
 
