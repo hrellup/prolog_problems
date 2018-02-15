@@ -25,8 +25,13 @@ palindrom(L) :- reverse(L,L).
 % 6.3 toptail
 %
 
+toptail(In, Out):- append([_|Out],[_], In)
 
+%
+% 6.4 last
+%
 
+last(List,X) :- reverse(List,[X|_]).
 
 
 
@@ -35,18 +40,9 @@ palindrom(L) :- reverse(L,L).
 
 test(double) :-
         double([a,b,c,a,b,c]).
-        
+
 test(double, fail) :-
         double([foo,gubble,foo]).
-
-test(palindrom) :-
-        palindrom([a,b,c,d,c,b,a]).
-        
-test(palindrom) :-
-        palindrom([a,b,c,d,c,b,a]).
-
-test(palindrom) :-
-        palindrom([a,b,c,d,c,b,a]).
 
 test(palindrom) :-
         palindrom([a,b,c,d,c,b,a]).
